@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ESP32_HairTrigger", "ESP32_HairTrigger\ESP32_HairTrigger.nfproj", "{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C15A748E-C9A8-47CC-B8DB-2FD1D85B152A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F575975C-3D03-4B35-AEA3-D6C2C7291BD9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EECCA85-E38F-4D29-8522-8A4FB293895E}
+	EndGlobalSection
+EndGlobal

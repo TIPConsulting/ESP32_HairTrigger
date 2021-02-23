@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <Wire.h>
 
+//Code from here: https://www.hackster.io/oztl/near-perfect-gyroscope-e5e10e
+
 #define MPU_addr 0x68 //0x means HEX (because I don't really understand these things yet)
 /**
         _
