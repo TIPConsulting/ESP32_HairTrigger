@@ -7,8 +7,11 @@ using Microsoft.Extensions.Configuration;
 using TIPC.Core.Channels;
 using TIPC.Core.Tools;
 using TIPC.Core.Tools.Threading;
+using Microsoft.Windows.Sdk;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
-namespace ArdNet.Server.Tests.CLI
+namespace ArdNet.Server.Tests.CLI.Core
 {
     public class RobustServerCLI : IDisposable
     {
@@ -16,7 +19,8 @@ namespace ArdNet.Server.Tests.CLI
         private MessageHub MsgHub { get; }
         private IArdNetServer ArdServer { get; }
         private LoggingMessageHubClient ArdLogger { get; }
-        private ITaskThread<object> TimerThread { get; set; }
+        private MouseMover MouseMover { get; }
+
 
         public RobustServerCLI(bool DEBUG = false)
         {
@@ -53,8 +57,9 @@ namespace ArdNet.Server.Tests.CLI
                     return;
                 Console.WriteLine($"EXCEPTION: {msg.Exception}");
             };
-        }
 
+            MouseMover = new MouseMover(ArdServer);
+        }
 
         public async Task RunServer()
         {
@@ -68,9 +73,8 @@ namespace ArdNet.Server.Tests.CLI
             ArdServer.TcpQueryReceived += Server_TcpQueryReceived;
             ArdServer.TcpCommandReceived += Server_TcpCommandReceived;
 
-            ArdServer.TcpCommandTable.Register("Device.Sensors.MPU", MpuHandler);
-
             ArdServer.Start();
+            MouseMover.Start();
 
 
             while (true)
@@ -148,11 +152,10 @@ namespace ArdNet.Server.Tests.CLI
         }
 
 
-        private void MpuHandler(IArdNetSystem sender, RequestResponderStateObject e)
-        {
-            var str = $"Accel: [{e.RequestArgs[0]}, {e.RequestArgs[1]}, {e.RequestArgs[2]}] | Gyro: [{e.RequestArgs[3]}, {e.RequestArgs[4]}, {e.RequestArgs[5]}]";
-            Console.WriteLine(str);
-        }
+
+
+
+
 
         #region Generic Message Debug
 
@@ -414,8 +417,7 @@ namespace ArdNet.Server.Tests.CLI
 
         public void Dispose()
         {
-            TimerThread?.Dispose();
-            TimerThread?.Interrupt();
+            MouseMover.Dispose();
             ArdLogger.Dispose();
             ArdServer.Dispose();
             MsgHub.Dispose();

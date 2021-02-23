@@ -26,12 +26,12 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ArdNet.Nano, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\ArdNet.Nano.1.0.0-preview.1\lib\netnanoframework10\ArdNet.Nano.dll</HintPath>
+      <HintPath>..\packages\ArdNet.Nano.1.0.0-preview.2\lib\netnanoframework10\ArdNet.Nano.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="ArdNet.Nano.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\ArdNet.Nano.Client.1.0.0-preview.1\lib\netnanoframework10\ArdNet.Nano.Client.dll</HintPath>
+      <HintPath>..\packages\ArdNet.Nano.Client.1.0.0-preview.2\lib\netnanoframework10\ArdNet.Nano.Client.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
