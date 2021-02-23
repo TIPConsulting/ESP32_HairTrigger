@@ -71,7 +71,7 @@ namespace ArdNet.Server.Tests.CLI.Core
 
         private void MouseWorkerHandler(object State, CancellationToken Token)
         {
-            var flags = 1; //mouse move
+            uint flags = 1; //mouse move
             //CsWin32 func signature is broken.  Must use manual pinvoke
             //PInvoke.mouse_event(flags, xMove, yMove, 0, 0);
 
