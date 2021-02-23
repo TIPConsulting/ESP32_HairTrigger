@@ -1,0 +1,7 @@
+{
+  "ServerPort": "48597",
+  "MessageEncoding": "UTF-8",
+  "UdpServerPrefix": "ARDNOSRV",
+  "UdpClientPrefix": "ARDNOCLNT",
+  "AppID": "Esp32.HairTrigger"
+}

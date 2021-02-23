@@ -1,0 +1,15 @@
+<CodeCloneSettings>  
+  <!-- INFO: https://docs.microsoft.com/en-us/previous-versions/hh205279(v=vs.140)?redirectedfrom=MSDN -->
+  <Exclusions>
+    <!-- Add any combination of the following node types. -->
+    <!-- Absolute or relative path names: -->
+
+    <File>*.secret.*</File>
+    <Namespace>ArdNet.Tests</Namespace>
+    <FunctionName>TIPC.CoreLib.Tools.Extensions.IEnumerableExtensions.Median</FunctionName>
+    <FunctionName>TIPC.CoreLib.Tools.Extensions.IEnumerableExtensions.StatsInfo</FunctionName>
+    <FunctionName>TIPC.CoreLib.Tools.Extensions.IEnumerableExtensions.StdDev</FunctionName>
+    <FunctionName>TIPC.CoreLib.Tools.Extensions.IEnumerableExtensions.Variance</FunctionName>
+
+  </Exclusions>  
+</CodeCloneSettings>
