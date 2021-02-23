@@ -29,11 +29,13 @@ The glove build isn't too complicated, the vast majority of the system complexit
 
 ## Applications
 
-TODO
+Hair Trigger was inspired by video games, but really it'll work for any simple PC gesture control needs. Like controlling netflix from bed or logging into meetings from bed or doing work from bed.  The possibilities are endless.
 
 ## Build Process
 
 <img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/TestRig1.JPG" alt="Test Rig" width="400px">
 
 <img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/TestRigPower.JPG" alt="Test Rig Power" width="400px">
+
+[Test Rig Demo Video](https://github.com/TIPConsulting/ESP32_HairTrigger/discussions/2)
 
