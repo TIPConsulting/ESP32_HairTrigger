@@ -87,9 +87,9 @@ You might need add a firewall rule to open TCP 48597
 
 The server app will tell when the ESP32 connects and you'll be able to move your mouse by rotating the MPU.  You should take this time to make sure you can orient the MPU so  your physical movements match the on-screen movements.  It's better to figure that out now rather than *after* you stich it to a glove.
 
-I plugged my test rig into a portable USB multimeter to see the power consumption.  It averages around 120 milliamps, which will give us several hours of life on our batteries.  It's not great, but it'll work for our purposes.
-
 <img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/TestRigPower.JPG" alt="Test Rig Power" width="400px">
+
+I plugged my test rig into a portable USB multimeter to see the power consumption.  It averages around 120 milliamps, which will give us several hours of life on our batteries.  It's not great, but it'll work for our purposes.
 
 ### [Test Rig Demo Video](https://github.com/TIPConsulting/ESP32_HairTrigger/discussions/2)
 
