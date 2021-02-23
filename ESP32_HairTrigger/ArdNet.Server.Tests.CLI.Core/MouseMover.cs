@@ -37,7 +37,7 @@ namespace ArdNet.Server.Tests.CLI.Core
 
 
         [DllImport("user32", CharSet = CharSet.Unicode)]
-        private static extern int mouse_event(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
+        private static extern int mouse_event(uint dwFlags, int dx, int dy, uint dwData, nint dwExtraInfo);
         private void MpuHandler(IArdNetSystem sender, RequestResponderStateObject e)
         {
             float accel = 1.0f;
