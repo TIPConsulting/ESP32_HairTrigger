@@ -93,3 +93,6 @@ I plugged my test rig into a portable USB multimeter to see the power consumptio
 
 ### [Test Rig Demo Video](https://github.com/TIPConsulting/ESP32_HairTrigger/discussions/2)
 
+## Performance
+
+I chose ArdNet because I wanted to experiment with it, not necessarily because its the best choice for this use case.  Because of that, the performance of the tool does suffer slightly.  The biggest issue seems to be network latency and dropped packets.  I am connected to a WiFi router on the other side of the house, which certainly has negative affects.  You could probably get a free performance boost by setting the Esp32 to WAP mode and connecting to it directly from your PC.  The device is also rather power hungry, again, because it uses WiFi instead of a more efficient data format.  It would be nice to explore alternative connections in the future.
