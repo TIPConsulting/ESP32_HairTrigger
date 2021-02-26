@@ -14,6 +14,7 @@ Control your favorite FPS games with a gyroscopic glove.  This project uses C# o
 - 1x 500mAh Lipo battery
 - JST-PH female plug
 - Copper tape
+- Conductive thread
 - Assorted lengths of wire
 
 ## Inspiration
@@ -82,7 +83,7 @@ If you made it this far, congratulations! Your ESP32 is ready to go!
 Now to see the fruits of your labor, find and launch the `ArdNet.Server.Tests.CLI.Core` project on your computer.  This will start a simple server that communicates with your ESP32 and moves your mouse cursr around the screen.  
 
 ```
-You might need add a firewall rule to open TCP 48597
+NOTE: You might need add a firewall rule to open TCP 48597
 ```
 
 The server app will tell when the ESP32 connects and you'll be able to move your mouse by rotating the MPU.  You should take this time to make sure you can orient the MPU so  your physical movements match the on-screen movements.  It's better to figure that out now rather than *after* you stich it to a glove.
@@ -95,7 +96,35 @@ I plugged my test rig into a portable USB multimeter to see the power consumptio
 
 ### "the glove"
 
-TODO
+Putting the glove together is thankfully easier than getting the controller ready.
+
+I decided that I wanted to add a built-in power switch to the glove, so I stitched snaps into the velco.  The snaps will close the circuit between the battery and the controller when theyre closed.
+
+<img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/Build1.JPG" alt="Build Power Switch" width="400px">
+
+I then soldered female jumper wires onto the ESP32 so I can easily plug it into the MPU.  At the sime time, I soldered headers into the capacitive touch pins to make it easy to connect the foil tape later.
+
+<img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/Build2.JPG" alt="Build 2" width="400px">
+
+The next step is to stitch the components together onto the glove.  This takes a while, but as long as you have some basic sewing skills, shouldn't be too difficult.  It's important to align the components before you start sewing.  You should make sure to put the pieces on wide, flat areas of your hand.  That will prevent flexing that could damage the components.  You should also make sure that the MPU will not move unintentionally; make sure the MPU is firmly affixed and only moves when your whole hand moves.
+
+```
+NOTE: Make sure that you mount the MPU properly or else the axes will be out of alignment
+```
+
+<img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/Build3.JPG" alt="Build 3" width="400px">
+
+Add the copper foil strips for the safety and trigger.  I had some trouble with this part because some areas of the glove are thin enough that the touch sensor is triggered without direct contact.  I had to make sure that the touch foil was on the thick gel pads (since this is a biking glove).
+
+<img src="https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/Complete2.JPG" alt="Complete 2" width="400px">
+
+Before we plug in the battery, lets test what we have.
+
+### [Here is a demo to compare](https://github.com/TIPConsulting/ESP32_HairTrigger/discussions/4)
+
+The last step is to plug in the battery.  We now have a finished glove!
+
+![Complete Glove](https://raw.githubusercontent.com/TIPConsulting/ESP32_HairTrigger/master/Diagrams/Complete1.JPG)
 
 ## Performance
 
