@@ -27,6 +27,7 @@ namespace ArdNet.Server.Tests.CLI.Core
 
             _ardSys = ArdSys;
             _ardSys.TcpCommandTable.Register("MPU", MpuHandler);
+            _ardSys.TcpCommandTable.Register("LClick", LClickHandler);
             _mouseWorkerThread = new CancelThread<object>(MouseWorkerHandler);
         }
 
@@ -36,8 +37,7 @@ namespace ArdNet.Server.Tests.CLI.Core
         }
 
 
-        [DllImport("user32", CharSet = CharSet.Unicode)]
-        private static extern int mouse_event(uint dwFlags, int dx, int dy, uint dwData, nint dwExtraInfo);
+
         private void MpuHandler(IArdNetSystem sender, RequestResponderStateObject e)
         {
             float accel = 1.0f;
@@ -68,6 +68,20 @@ namespace ArdNet.Server.Tests.CLI.Core
             _mouseVectorLifetime = 0;
         }
 
+        private void LClickHandler(IArdNetSystem sender, RequestResponderStateObject request)
+        {
+            if (request.RequestArgs[0] == "down")
+            {
+                uint flags = 0x0002; //left mouse down
+                _ = mouse_event(flags, 0, 0, 0, 0);
+            }
+            else if (request.RequestArgs[0] == "up")
+            {
+                uint flags = 0x0004; //left mouse up
+                _ = mouse_event(flags, 0, 0, 0, 0);
+            }
+        }
+
 
         private void MouseWorkerHandler(object State, CancellationToken Token)
         {
@@ -90,6 +104,12 @@ namespace ArdNet.Server.Tests.CLI.Core
                 _ = Token.WaitHandle.WaitOne(10);
             }
         }
+
+
+
+        [DllImport("user32", CharSet = CharSet.Unicode)]
+        private static extern int mouse_event(uint dwFlags, int dx, int dy, uint dwData, nint dwExtraInfo);
+
 
 
         public void Dispose()
